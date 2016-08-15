@@ -1,4 +1,4 @@
-# SBERNED DJORNADO template application
+# DJORNADO template application
 included: tornado; peewee orm; django-styled migrations; protobuf api; auth; tests
 ## Migrations
 make migrations: python manage.py makemigrations [name]
