@@ -18,7 +18,6 @@ db = peewee_async.PooledPostgresqlDatabase(**db_param)
 class User(peewee.Model):
     name = peewee.CharField(index=True, unique=True, verbose_name='Имя пользователя')
     password = peewee.CharField(verbose_name='Пароль')
-    role = peewee.CharField(choices=ROLE_CHOICES, default=ROLE_USER, verbose_name='Роль')
 
     @classmethod
     async def create_user(cls, **kwargs):
