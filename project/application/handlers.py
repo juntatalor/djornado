@@ -74,5 +74,5 @@ class ProtectedHandler(BaseHandler):
 
 class TestModelListHandler(ApiListHandler):
     model = TestModel
-    pb_item_cls = models_pb2.SprintPB
-    pb_list_cls = models_pb2.SprintListPB
+    pb_item_cls = models_pb2.TestModelPB
+    pb_list_cls = models_pb2.TestModelListPB

@@ -130,7 +130,7 @@ async def test_logout_handler(http_client, base_url, monkeypatch):
     monkeypatch.setattr('project.application.base.handlers.BaseHandler.get_current_user', lambda x: 'TestUser')
 
     # Fetch login-required url with authentication
-    resp = await http_client.fetch(base_url + '/board')
+    resp = await http_client.fetch(base_url + '/test_model')
     assert resp.code == 200
 
     resp = await http_client.fetch(base_url + '/logout')
@@ -140,7 +140,7 @@ async def test_logout_handler(http_client, base_url, monkeypatch):
 
     # Fetch login-required url without authentication
     with pytest.raises(HTTPError) as e:
-        await http_client.fetch(base_url + '/board', method='POST', body='')
+        await http_client.fetch(base_url + '/test_model', method='POST', body='')
     assert e.value.code == 403
 
 
@@ -151,7 +151,6 @@ async def test_test_model_api(http_client, base_url, monkeypatch):
 
     # Create board via API
     test_model = models_pb2.TestModelPB()
-    test_model.id_item = 1
     test_model.name = 'TestModel'
     resp = await http_client.fetch(base_url + '/test_model', method='POST', body=test_model.SerializeToString())
     assert resp.code == 201
@@ -164,5 +163,4 @@ async def test_test_model_api(http_client, base_url, monkeypatch):
 
     assert hasattr(test_models, 'items')
     assert len(test_models.items) == 1
-    assert test_models.items[0].id_item == 1
     assert test_models.items[0].name == 'TestModel'
