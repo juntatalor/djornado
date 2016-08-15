@@ -39,7 +39,7 @@ application = web.Application([
 application.objects = peewee_async.Manager(db)
 
 
-def runserver():
+def run_tornado_server():
     parse_command_line()
 
     application.listen(port, '0.0.0.0')
