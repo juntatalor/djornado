@@ -1,0 +1,34 @@
+##basic build dependencies of various for Debian 8
+build-essential
+libncursesw5-dev
+libreadline-gplv2-dev
+libgdbm-dev
+libc6-dev
+libsqlite3-dev
+tk-dev
+gettext
+python3-setuptools
+python3-pip
+
+##Postgresql and psycopg2 dependencies
+libpq-dev
+
+python3-dev
+
+##pylibmc
+libmemcached-dev
+libssl-dev
+openssl
+
+##dev tools
+git
+vim
+
+#protobuf
+autoconf
+automake
+libtool
+curl
+make
+g++
+unzip

@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+message UserPB {
+    string name = 1;
+    string password = 2;
+    string role = 3;
+}
+
+message UserListPB {
+    message UserListItemPB {
+        int32 id = 1;
+        string name = 2;
+        string role = 3;
+    }
+    repeated UserListItemPB items = 1;
+}
+
+message TestModelPB {
+    string name = 2;
+}
+
+message TestModelListPB {
+    message TestModelListItemPB {
+        int32 id = 1;
+        string name = 2;
+    }
+    repeated TestModelListItemPB items = 1;
+}

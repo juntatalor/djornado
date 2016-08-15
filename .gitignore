@@ -1,0 +1,6 @@
+.env
+.vagrant
+.idea
+.cache
+.coverage
+*.py[cod]
